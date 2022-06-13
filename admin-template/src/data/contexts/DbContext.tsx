@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { firebaseAppInitialize } from "../firebase/firebase";
 import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore'
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -22,9 +22,9 @@ export const DbContext = createContext<DbContextProps>({} as DbContextProps);
 export function DbContextProvider({children}) {
     const { user } = useAuthContext();
     const [cards, setCards] = useState<Card[]>([]);
+    const [render, setRender] = useState(false);
     // init firebase databse
-    const app = firebaseAppInitialize();
-    const db = getFirestore(app);
+    const db = getFirestore(firebaseAppInitialize());
 
     async function addCard(
         content: string, 
@@ -39,6 +39,7 @@ export function DbContextProvider({children}) {
             uid,
         })
         console.log(card)
+        setRender(!render);
     }
 
     async function renderCards() {
@@ -52,7 +53,12 @@ export function DbContextProvider({children}) {
             }
         })
         setCards([...allCards])
+        console.log('renderCard');
     }
+
+    useEffect(() => {
+        renderCards();
+      }, [render])
 
     return(
         <DbContext.Provider value={{

@@ -22,7 +22,8 @@ export default function Layout({title, subtitle, children}: LayoutProps) {
                 <main className={`
                     flex flex-col
                     w-full min-h-screen
-                    pl-28 pr-8
+                    pl-24 pr-4
+                    sm:pl-28 sm:pr-8
                     py-5
                     bg-gray-200
                     dark:bg-gray-800

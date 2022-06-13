@@ -1,54 +1,35 @@
-import { FormEvent, useEffect, useState } from "react";
+import { useState } from "react";
+import Card from "../components/topics/Card";
+import FormTopic from "../components/topics/FormTopic";
+import GreetingNewTopic from "../components/topics/GreetingNewTopic";
 import Layout from "../components/template/Layout";
 import { useDbContext } from "../data/hooks/useDbContext";
+import SucessMessage from "../components/topics/SucessMessage";
 
 export default function Home() {
-  const { renderCards, cards, addCard } = useDbContext();
-  const [content, setContent] = useState<string>('');
-  const [image, setImage] = useState<string>('');
-  const [title, setTitle] = useState<string>('');
+  const { cards } = useDbContext();
+  const [newTopic, setNewTopic] = useState<boolean>(false);
+  const [sucessMessage, setSucessMessage] = useState<boolean>(false);
 
-  function handleCreateCard(e: FormEvent) {
-    e.preventDefault();
-    if(image !== '' || image.length > 10){
-      addCard(content, title, image);
-    }else {
-      addCard(content, title);
-    }
-  }
-
-  useEffect(() => {
-    renderCards()
-  }, [addCard])
   return (
         <Layout
-          title="Página Inicial"
-          subtitle="Essa é página principal do Projeto"
+          title="Deixe sua Marca"
+          subtitle="Crie um tópico e deixe sua marca no projeto"
         >
-          <section>
-              <form onSubmit={handleCreateCard}>
-                  <div>
-                    <label htmlFor="">conteudo</label>
-                    <input type="text" value={content} onChange={(e) => setContent(e.target.value)}/>
-                  </div>
-                  <div>
-                    <label htmlFor="">titulo</label>
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                  </div>
-                  <div>
-                    <label htmlFor="">image</label>
-                    <input type="text" value={image} onChange={(e) => setImage(e.target.value)}/>
-                  </div>
-                  <button type="submit">Enviar</button>
-              </form>
-
-              {cards.map(card => (
-                  <div key={card.uid} className={'bg-slate-600 my-5'}>
-                    <h4>{card.title}</h4>
-                    <img src={card.image} alt="" className="w-24 h-34"/>
-                    <p>{card.content}</p>
-                  </div>
+          <section className="h-full">
+            <section className="mb-8">
+              {sucessMessage ? (
+                <SucessMessage setSucessMessage={setSucessMessage}/>
+              ): (
+                newTopic ? <FormTopic setSucessMessage={setSucessMessage}/>: <GreetingNewTopic newTopic={setNewTopic}/>
+              )}
+              
+            </section>
+              <section className="flex flex-wrap w-full justify-around">
+                {cards.map((card, index) => (
+                    <Card key={index} title={card.title} image={card.image} content={card.content}/>
                 ))}
+              </section>
           </section>
         </Layout>
   )
