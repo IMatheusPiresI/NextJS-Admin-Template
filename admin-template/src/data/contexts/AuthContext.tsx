@@ -18,6 +18,7 @@ interface AuthContextProps {
     user: User;
     logout: () => void;
     loading: boolean;
+    setLoading: (newState: boolean) => void;
     error: string;
     loginWithEmailandPassword: (email: string, password: string) => void
     registeWithEmailAndPassword: (email: string, password: string) => void
@@ -39,12 +40,10 @@ export function AuthContextProvider({children}) {
     async function loginWithGoogle() {
         await signInWithPopup(auth, provider)
         .then(async (result) => {
-          // This gives you a Google Access Token. You can use it to access the Google API.
           const credential = GoogleAuthProvider.credentialFromResult(result);
           const token = credential.accessToken;
-          // The signed-in user info.
           const userFirebase = result.user;
-          if( userFirebase?.email){
+          if(userFirebase?.email){
             setUser({
                 email: userFirebase.email,
                 displayName: userFirebase.displayName,
@@ -54,24 +53,16 @@ export function AuthContextProvider({children}) {
                 providerId: userFirebase.providerData[0].providerId
             })
             Cookies.set('admin-template-auth', userFirebase.uid)
-            console.log(userFirebase)
             router.push('/');
-            setLoading(false);
             if(!localStorage.getItem('google-user-photo') && userFirebase?.photoURL !== null && userFirebase.providerData[0].providerId === 'google.com'){
                 localStorage.setItem('google-user-photo', userFirebase.photoURL)
             }
             localStorage.setItem('uid', userFirebase.uid)
+            setLoading(false);
           }
         })
         .catch((error) => {
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // The email of the user's account used.
-          const email = error.customData.email;
-          // The AuthCredential type that was used.
-          const credential = GoogleAuthProvider.credentialFromError(error);
-          // ...
+            console.log(error);
         });
       }
 
@@ -82,7 +73,6 @@ export function AuthContextProvider({children}) {
       }
 
       function configSession(user: User) {
-          console.log(user);
           if(user) {
             setUser(user)
             Cookies.set('admin-template-auth', user.uid)
@@ -113,10 +103,10 @@ export function AuthContextProvider({children}) {
                     uid: user.user.uid,
                     photoURL: user.user.photoURL,
                 })
+                Cookies.set('admin-template-auth', user.user.uid)
                 router.push('/');
             })
             .catch(error => {
-                console.log(error.message);
                 if(error.message === 'Firebase: Error (auth/wrong-password).'){
                     openAndcloseErrorMessage('Senha incorreta.');
                 }else if (error.message === 'Firebase: Error (auth/user-not-found).') {
@@ -140,6 +130,7 @@ export function AuthContextProvider({children}) {
                 uid: user.user.uid,
                 photoURL: user.user.photoURL,
             })
+            Cookies.set('admin-template-auth', user.user.uid)
         });
       }
 
@@ -153,11 +144,10 @@ export function AuthContextProvider({children}) {
           }
         setUser(userPhoto);
         if(confirmedChange){
-            console.log('entrou')
             await updateProfile(auth.currentUser, {
                 photoURL: src,
                 displayName: displayName,
-            }).then((user) => console.log(user)).catch(error => console.log(error));
+            })
         }
     }
     
@@ -168,11 +158,11 @@ export function AuthContextProvider({children}) {
                 if(user?.email){
                     let token = '';
                     user.getIdToken().then(resp => token = resp);
-                    console.log(token);
                     const userFirebase: User = {
                         email: user.email,
                         displayName: user.displayName,
                         acessToken: token,
+                        providerId: user.providerData[0].providerId,
                         photoURL: user.photoURL,
                         uid: user.uid
                     }
@@ -192,7 +182,8 @@ export function AuthContextProvider({children}) {
             error,
             loginWithEmailandPassword,
             registeWithEmailAndPassword,
-            handleChangePhoto
+            handleChangePhoto,
+            setLoading,
         }}>
             {children}
         </AuthContext.Provider>

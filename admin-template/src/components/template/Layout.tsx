@@ -27,6 +27,7 @@ export default function Layout({title, subtitle, children}: LayoutProps) {
                     py-5
                     bg-gray-200
                     dark:bg-gray-800
+                    text-gray-700
                     dark:text-white
                 `}>
                     <Header title={title} subtitle={subtitle}/>

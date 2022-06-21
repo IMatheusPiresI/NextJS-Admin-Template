@@ -12,7 +12,6 @@ export default function FormTopic({setSucessMessage}: FormTopicProps) {
     const [content, setContent] = useState<string>('');
     const [image, setImage] = useState<string>('');
     const [title, setTitle] = useState<string>('');
-    const [minCaracter, setMinCaracter] = useState<boolean>(false);
 
     function handleCreateCard(e: FormEvent) {
         e.preventDefault();
@@ -62,7 +61,7 @@ export default function FormTopic({setSucessMessage}: FormTopicProps) {
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                     min={10}
-                    max={200}
+                    max={1000}
                     placeholder={'Ex: https://image.png'}
                   />
                 </div>
@@ -70,7 +69,6 @@ export default function FormTopic({setSucessMessage}: FormTopicProps) {
                 <ContentTopic
                   label={'Conteúdo'}
                   value={content} 
-                  minCaracter={minCaracter}
                   onChange={(e) => setContent(e.target.value)}
                 />
                 <button 

@@ -8,9 +8,9 @@ const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: "projeto-template-ef7ca.appspot.com",
-  messagingSenderId: "1064157268963",
-  appId: "1:1064157268963:web:2a10d0d33d9221fe8d6ed6"
+  storageBucket: process.env.NEXT_PUBLIC_FIREVASE_STORAGEBUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APPID,
 };
 
 // Initialize Firebase

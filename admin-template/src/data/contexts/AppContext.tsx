@@ -20,7 +20,7 @@ export function AppContextProvider({children}) {
     useEffect(() => {
         if (localStorage.getItem('theme')){
             const localTheme = localStorage.getItem('theme');
-            if(localTheme === 'dark' || localTheme ===''){
+            if(localTheme === 'dark' || localTheme === ''){
                 setTheme(localTheme)
             }
         }

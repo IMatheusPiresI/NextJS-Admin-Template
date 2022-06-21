@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import { iconClose, iconPencil } from "../components/icons/icons";
 import EditProfile from "../components/template/EditProfile";
@@ -34,13 +35,20 @@ export default function Profile() {
   }
 
   return (
+    <>  
+        <Head>
+            <meta name="description" content="Perfil do usuário, onde podem ser encontradas as informações do usuário."/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Meu Perfil</title>
+        </Head>
+    
         <Layout
           title="Perfil do usuário"
           subtitle="Aqui você poderá conferir suas informações"
         >
           <section className="flex flex-col items-center w-full h-full text-center pt-16">
             
-              <h3 className="text-4xl text-center font-bold">
+              <h3 className="text-xl sm:text-2xl md:text-4xl text-center font-bold break-words w-full">
                 {editProfile ? 'Altere sua foto' : user?.displayName ? `Seja bem vindo ${user.displayName}!` : "Seja bem vindo!"}
               </h3>
               
@@ -49,7 +57,7 @@ export default function Profile() {
                   src={renderUserPhoto()}
                   alt="Foto usuário" 
                   className={`
-                    w-60 h-60 rounded-full border-2 border-solid border-blue-800
+                    sm:w-60 sm:h-60 w-44 h-44 rounded-full border-2 border-solid border-blue-800
                     dark:border-white
                     my-10
                   `}  
@@ -65,8 +73,8 @@ export default function Profile() {
                   {editProfile ? iconClose('w-10 h-10 text-gray-200') : iconPencil('w-10 h-10 text-gray-200')}
                 </div>
               </div>
-              <div className="text-justify">
-                <p className="text-2xl font-bold text-zinc-700 dark:text-white">
+              <div className="w-full">
+                <p className="text-left sm:text-center text-lg md:text-2xl font-bold text-zinc-700 dark:text-white break-words mb-2">
                   Nome: {editProfile ? (
                     <input 
                       type="text"
@@ -84,7 +92,7 @@ export default function Profile() {
                       />
                   ) : user?.displayName ? user.displayName : 'Atualize seu nome e foto clicando no lápis.'}
                 </p>
-                <p className="text-2xl font-bold text-zinc-700 dark:text-white">
+                <p className="text-left sm:text-center text-sm md:text-2xl font-bold text-zinc-700 dark:text-white">
                   Email: {user?.email}
                 </p>
               </div>
@@ -100,5 +108,6 @@ export default function Profile() {
           </section>
           
         </Layout>
+    </>
   )
 }

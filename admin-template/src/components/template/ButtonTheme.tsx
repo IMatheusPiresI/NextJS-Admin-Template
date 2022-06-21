@@ -7,6 +7,7 @@ export default function ButtonTheme() {
         <div className="
                 bg-zinc-500 rounded-full w-16 h-8
                 dark:bg-amber-300
+                hidden sm:flex
                 border border-solid border-blue-400
                 relative
                 ease-in-out duration-500

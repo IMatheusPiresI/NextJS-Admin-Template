@@ -12,7 +12,8 @@ export default function SucessMessage({setSucessMessage}: SucessMessageProps) {
             text-center
             flex items-center
             flex-col
-            lg:py-5 lg:px-5
+            md:py-5 md:px-5
+            py-8 px-3
             relative
             mb-5
             min-h-full

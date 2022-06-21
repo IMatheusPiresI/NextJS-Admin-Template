@@ -13,11 +13,11 @@ export default function Header({title, subtitle}: HeaderProps) {
         <section className="flex items-center">
             <div className="flex-grow">
                 <h1 className={`
-                    text-black text-3xl font-bold
+                    text-gray-700 text-2xl sm:text-3xl font-bold
                     dark:text-white
                 `}>{title}</h1>
                 <h2 className={`
-                    text-black text-1xl
+                    text-gray-600 text-sm sm:text-xl
                     dark:text-white
                 `}>{subtitle}</h2>
             </div>

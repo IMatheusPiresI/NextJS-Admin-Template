@@ -1,10 +1,17 @@
+import { useAppContext } from "../../data/hooks/useAppContext";
 import { useAuthContext } from "../../data/hooks/useAuthContext";
-import { iconAdjustments, iconHome, iconLogout, iconNotifications, iconUserProfile } from "../icons/icons";
+import { iconHome, iconLogout, iconMoon, iconMyTopics, iconSun, iconUserProfile } from "../icons/icons";
 import Logo from "./Logo";
 import SideBarItems from "./SideBarItems";
 
 export default function SideBar() {
     const { logout } = useAuthContext();
+    const { theme, changeTheme } = useAppContext();
+
+    function handleChangeTheme() {
+        changeTheme()
+    }
+
     return (
         <aside className="fixed left-0">
             <nav className="
@@ -18,21 +25,21 @@ export default function SideBar() {
                 ">
                     <Logo/>
                 </div>
-                <ul className="flex flex-col flex-grow">
+                <ul className="flex flex-col flex-grow text-center">
                     <SideBarItems icon={iconHome} name={'Início'} href={'/'}/>
-                    <SideBarItems icon={iconAdjustments} name={'Ajustes'} href={'/adjustments'}/>
-                    <SideBarItems icon={iconNotifications} name={'Notificações'} href={'/notifications'}/>
+                    <SideBarItems icon={iconMyTopics} name={'Meus Tópicos'} href={'/mytopics'}/>
                     <SideBarItems icon={iconUserProfile} name={'Perfil'} href={'/profile'}/>
                 </ul>
                 <ul>
+                    <SideBarItems icon={theme === 'dark' ? iconSun('w-6 h-6') : iconMoon('w-6 h-6')} name={theme === 'dark' ? 'Modo Claro' : 'Modo Escuro'} onClick={handleChangeTheme} className={'flex sm:hidden'}/>
                     <SideBarItems 
-                    icon={iconLogout} 
-                    name={'Sair'} href={'/'} 
-                    className={`
-                        text-red-600 hover:bg-red-500 hover:text-white
-                        dark:text-red-500 dark:hover:bg-red-500 dark:hover:text-white
-                    `}
-                    onClick={logout}
+                        icon={iconLogout} 
+                        name={'Sair'} href={'/authentication'} 
+                        className={`
+                            text-red-600 hover:bg-red-600 hover:text-white
+                            dark:text-red-600 dark:hover:text-white dark:hover:bg-red-600
+                        `}
+                        onClick={logout}
                     />
                 </ul>
             </nav>

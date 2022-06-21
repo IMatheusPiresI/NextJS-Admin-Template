@@ -11,7 +11,7 @@ interface EditImageUserProps {
 }
 
 export default function EditImageUser({src,url, alt, googleImage, changeImage}: EditImageUserProps) {
-    const {user} = useAuthContext();
+    const { user } = useAuthContext();
 
     function handleChageUserPhoto() {
         changeImage(url);
@@ -25,7 +25,7 @@ export default function EditImageUser({src,url, alt, googleImage, changeImage}: 
             cursor-pointer 
             rounded-full 
             overflow-hidden
-            ${user.photoURL === url ? 'scale-110 animate-pulse hover:scale-110 border-2 border-solid border-cyan-500' : 'scale-95 hover:scale-100'}
+            ${user?.photoURL === url ? 'scale-110 animate-pulse hover:scale-110 border-2 border-solid border-cyan-500' : 'scale-95 hover:scale-100'}
         `} onClick={handleChageUserPhoto}>
             {googleImage ? (
                 <img 

@@ -6,9 +6,10 @@ interface InputTopicProps {
     max: number;
     placeholder: string;
     type: string;
+    className?: string;
 }
 
-export default function InputTopic({label, value, onChange, min, max, placeholder, type}: InputTopicProps) {
+export default function InputTopic({label, value, onChange, min, max, placeholder, type, className}: InputTopicProps) {
     return(
         <div className="w-full text-justify mt-2">
             <label htmlFor={label} className={`
@@ -27,11 +28,14 @@ export default function InputTopic({label, value, onChange, min, max, placeholde
                     required
                     placeholder={placeholder}
                     className={`
-                        w-full py-2 px-3
+                        w-full 
+                        sm:py-2 sm:px-3
+                        py-2 px-2
                         focus:outline-none
                         dark:text-black
                         rounded-lg
                         mt-1
+                        ${className}
                     `}
                 />
             ) : (
@@ -46,14 +50,18 @@ export default function InputTopic({label, value, onChange, min, max, placeholde
                     placeholder={placeholder}
                     pattern={'https://.*'}
                     className={`
-                        w-full py-2 px-3
+                        w-full
+                        sm:py-2 sm:px-3
+                        py-2 px-2
                         focus:outline-none
                         dark:text-black
                         rounded-lg
                         mt-1
+                        ${className}
                     `}
                 />
             )}
+            <p className="dark:text-gray-400 text-gray-500 mt-1">{value.length}/{max}</p>
         </div>
     )
 }
