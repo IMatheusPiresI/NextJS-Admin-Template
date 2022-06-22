@@ -15,6 +15,7 @@ interface CardProps {
 } 
 
 export default function Card({title, image, content, id, uid}: CardProps) {
+    const { cards } = useDbContext();
     const { deleteCards, updateCard } = useDbContext();
     
     const [update, setUpdate] = useState<boolean>(false);
@@ -44,11 +45,12 @@ export default function Card({title, image, content, id, uid}: CardProps) {
     }
 
     useEffect(() => {
+        console.log(title);
         setUidCurrentUser(Cookies.get('admin-template-auth'))
         setNewTitle(title);
         setNewImage(image);
         setNewContent(content)
-    }, [])
+    }, [cards])
 
     return (
         <div className={`
