@@ -45,7 +45,6 @@ export default function Card({title, image, content, id, uid}: CardProps) {
     }
 
     useEffect(() => {
-        console.log(title);
         setUidCurrentUser(Cookies.get('admin-template-auth'))
         setNewTitle(title);
         setNewImage(image);
