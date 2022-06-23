@@ -24,7 +24,7 @@ Repositório do projeto ** Admin-Template-Topic** desenvolvido com fins didátic
 
 <h3 id="inicio">🚀 Site do projeto</h3>
 
-[Visite o Site do Projeto Capital-Clima](https://admin-template-topics.vercel.app) 🎮
+[Visite o Site do Projeto Admin-Template-Topic](https://admin-template-topics.vercel.app) 🎮
 
 <h3 id="acessar-projeto">📁 Inicialização da Clonagem</h3>
 
