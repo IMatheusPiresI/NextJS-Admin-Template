@@ -20,7 +20,7 @@ Repositório do projeto ** Admin-Template-Topic** desenvolvido com fins didátic
 
 <h3 id="preview">🎥 Preview</h3>
 
-<img src="./admin-template.gif" width="100%">
+<img src="./admin-template-topic.gif" width="100%">
 
 <h3 id="inicio">🚀 Site do projeto</h3>
 
