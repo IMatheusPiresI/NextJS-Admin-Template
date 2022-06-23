@@ -54,25 +54,21 @@ Ao clicar em <a href="https://admin-template-topics.vercel.app" target="_blank">
   <img align="center" alt="REACT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
   <img align="center" alt="NEXT" height="30" width="40" src="https://static.cdnlogo.com/logos/n/80/next-js.svg">
   <img align="center" alt="TAILWIND" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png">
+  <img align="center" alt="REACT" height="30" width="40" src="https://static.cdnlogo.com/logos/f/48/firebase.svg">
 </div>
 
 <h3 id="sobre">📍 Sobre</h3>
 
-✅ Desenvolvido com React, Styled-Components, Context API, React Hooks. <br>
+✅ Desenvolvido com NextJS, TailwindCSS, Context API, React Hooks, Typescript, Firebase. <br>
 ✅ O projeto é uma SPA, trocando apenas o conteúdo dentro da página.<br>
 ✅ Desenvolvido a componentização para poder reutilizar com funções diferentes.<br>
-✅ O algorítimo faz a checagem da busca do usuário e realiza a requisição http em 3 API's simultaneamente. <br>
-✅ A primeira API me retorna os dados locais do clima de determinada região, como temperatura, Velocidade do vento, pôr do sol e nascer do sol, etc.<br>
-✅ A segunda API me retorna a previsao do tempo, para isso eu preciso coletar os dados de geolocalização da primeira API e passar para a requisição da segunda para que ela possa retornar os dados do local pesquisado pelo usuário. <br>
-✅ A terceira API é a API que mostra ai entrar no site, a API de BSB - Brasília. Essa API é consumida de forma estática para deixar as informações da Capital, caso o usuário pesquise um local, esse componente é alterado para os dados do local procurado com uma animação.  <br>
-✅ Toda criação criada utilizando Styled-Components <br><br>
-
+✅ Realiza autenticação por meio do firebase para login com email e senha ou com o provedor do google. <br>
+✅ Todos os tópicos são lidos, criados, editados e removidos em tempo real utilizando o cloud firestore do firebase;
+     
 <h3 id="extras">📢 Extras</h3>
 
-✅ Criei uma unica página para a plicação, onde mostrava apenas os componentes que estão as informações do clima <br>
-✅ Todo a alteração da API é feita de forma dinâmica de acordo com o valor passado pelo input pelo usuário. <br>
-✅ Trabalhei com diversas requisições a API para retornar as informações de clima <br>
-✅ Projeto responsivo. <br>
+✅ Criei uma unica página para a plicação, onde mostrava apenas os componentes que estão as informações dos tópicos<br>
+✅ Toda a interação do usuário é salva em localstorage em no banco de dados do firebase, como alteração de thema, de foto de usuário e interação coms os tópicos;
 
 <h3 id="status">📌 Status do projeto</h3>
 
