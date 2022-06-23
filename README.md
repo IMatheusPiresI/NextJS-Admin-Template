@@ -20,10 +20,10 @@ Repositório do projeto ** Admin-Template-Topic** desenvolvido com fins didátic
 
 <h3 id="preview">🎥 Preview</h3>
 
-<video controls autoplay loop>
+<video width="100%" controls autoplay loop>
        <source src="./admin-template.mp4" type="video/mp4">
 </video>
-<img src="./admin-template-topic.gif" width="100%">
+
 
 <h3 id="inicio">🚀 Site do projeto</h3>
 
