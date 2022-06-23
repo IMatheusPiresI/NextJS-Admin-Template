@@ -52,7 +52,8 @@ Ao clicar em <a href="https://admin-template-topics.vercel.app" target="_blank">
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="REACT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
-  <img align="center" alt="REACT" height="30" width="40" src="https://static.cdnlogo.com/logos/n/80/next-js.svg">
+  <img align="center" alt="NEXT" height="30" width="40" src="https://static.cdnlogo.com/logos/n/80/next-js.svg">
+  <img align="center" alt="TAILWIND" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png">
 </div>
 
 <h3 id="sobre">📍 Sobre</h3>
