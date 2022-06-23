@@ -24,26 +24,26 @@ Repositório do projeto ** Admin-Template-Topic** desenvolvido com fins didátic
 
 <h3 id="inicio">🚀 Site do projeto</h3>
 
-[Visite o Site do Projeto Capital-Clima](https://capital-clima.vercel.app) 🎮
+[Visite o Site do Projeto Capital-Clima](https://admin-template-topics.vercel.app) 🎮
 
 <h3 id="acessar-projeto">📁 Inicialização da Clonagem</h3>
 
-◽ <a href="https://github.com/IMatheusPiresI/React-API-Clima">Acessar</a>🔗 o código fonte pelo GitHub. <br>
+◽ <a href=https://github.com/IMatheusPiresI/NextJS-Admin-Template">Acessar</a>🔗 o código fonte pelo GitHub. <br>
 ◽ Clonar o repositório ultilizando Git Bash + o comando:
 
-       $ git clone https://github.com/IMatheusPiresI/React-API-Clima.git
+       $ git clone https://github.com/IMatheusPiresI/NextJS-Admin-Template.git
 
-◽ Acessar a pasta react-clima e executar o comando <br>
+◽ Acessar a pasta admin-template e executar o comando <br>
 
-        $ npm install
+        $ yarn
 
 ◽ Após a instalação das dependências, rodar o comando  <br>
 
-        $ npm start
+        $ yarn run dev
 
 <h3 id="instalacao">🛠️ Acessar Projeto</h3>
 
-Ao clicar em <a href="https://capital-clima.vercel.app" target="_blank">Capital-Clima</a>🔗 o site irá abrir para que possa utilizá-lo. Ele mostrará informações em tempo real sobre o clima da Cidade, estado e país que procurar, aprecie!
+Ao clicar em <a href="https://admin-template-topics.vercel.app" target="_blank">Admin-Template-Topic</a>🔗 o site irá abrir para que possa utilizá-lo. Realize o login e crie seus tópicos para compartilhar conhecimento com os usuários.
 
 <h3 id="tecnologias">⚙️ Tecnologias Utilizadas</h3>
 
@@ -52,6 +52,7 @@ Ao clicar em <a href="https://capital-clima.vercel.app" target="_blank">Capital-
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="REACT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img align="center" alt="REACT" height="30" width="40" src="https://static.cdnlogo.com/logos/n/80/next-js.svg">
 </div>
 
 <h3 id="sobre">📍 Sobre</h3>
